@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+</head>
+
+<div id="app1">
+    <h2>{{ products }} are in stocks.</h2>
+    <input v-model="products">
+</div>
+
+<div id="app2">
+    <ul>
+        <li v-for="product in products">
+            {{product}}
+        </li>
+    </ul>
+</div>
+
+<div id="app3">
+    {{message}}
+</div>
+
+<div id="app4">
+    <span v-bind:title="message">
+   Наведи курсор на меня пару секунд,
+    чтобы увидеть динамически связанное значение title!
+    </span>
+</div>
+
+<div id="app5">
+    <span v-if="seen">
+        Сейчас меня видно
+    </span>
+</div>
+
+<div id="app6">
+    <ol>
+        <li v-for="todo in todos">
+            {{todo.text}}
+        </li>
+    </ol>
+</div>
+
+<div id="app7">
+    <p>{{message}}</p>
+    <button v-on:click="reverseMessage">Повернуть сообщение</button>
+</div>
+
+<div id="app8">
+<ol>
+    <todo-item
+            v-for="item in groceryList"
+    v-bind:todo="item"
+    v-bind:key="item.id">
+
+    </todo-item>
+</ol>
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+<script src="main.js"></script>
