@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<span v-bind:class="{active: isActive, 'text-danger':hasError}">Span active={{isActive}}</span>
+
+<div class="static" v-bind:class="{active:isActive,'text-danger':hasError}">Div active={{isActive}}</div>
+<p v-bind:class="classObject">classObject {{classObject}}</p>
+<h1 v-bind:class="classObject">classObject {{classObject}}</h1>
+<h2 v-bind:class="[activeClass,errorClass]">[activeClass,errorClass] = {{[activeClass,errorClass]}}</h2>
+
+<h3 v-bind:class="[isActive ? activeClass :'', errorClass]">[isActive ? activeClass: errorClass] =
+    {{[isActive ? activeClass :errorClass]}} {{isActive}}</h3>
+
+<h4 v-bind:class="[{active:isActive},errorClass]">[{ active: isActive }, errorClass] == {{[{active:isActive},errorClass]}}</h4>
+<div id="example">
+    <my-component></my-component>
+</div>
+
+<p id="pcomponent">
+    <!--<p-component class="test1 test2"></p-component>-->
+    <p-component v-bind:class="{active: isActive}"></p-component>
+</p>
+
+<div id="inline" v-bind:style="{color:activeColor, fontSize: fontSize+'px'}">{color:{{activeColor}}, fontSize: {{fontSize}}px}</div>
+<!--<div id="object" v-bind:style="styleObject">v-bind:style="styleObject"</div>-->
+<div id="object" v-bind:style="[baseStyles,overridingStyles]">v-bind:style="styleObject"</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+<script src="vuecss.js"></script>
+
+</body>
+</html>
