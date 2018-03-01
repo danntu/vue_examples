@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app" v-bind:id="'app-'+dynamicId">
+
+
+    <button v-bind:disabled="isButtonDisabled">Кнопка {{isButtonDisabled}}</button><br>
+    number =10;{{raw1}} = <font color="blue">{{number +1}}</font><br>
+    {{raw2}} = <font color="blue">{{isButtonDisabled ? 'YES':'NO'}}</font><br>
+    Reverse {{message}} <font color="blue">{{ message.split('').reverse().join('') }}</font>
+
+    <p v-if="seen">Меня видно</p>
+    Полный синтаксис &lt;a v-bind:href="url"&gt; ... &lt;/a&gt; Example <a v-bind:href="url">google.kz</a><br>
+    Сокращенный синтаксис &lt;a :href="url"&gt; ... &lt;/a&gt; Example <a :href="url">google.kz</a>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+<script src="attribute.js"></script>
+</body>
+</html>
