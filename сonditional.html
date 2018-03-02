@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="test">
+    <h1 v-if="ok"> v-if="true" Yes</h1>
+    <h1 v-else>v-else No</h1>
+
+    <templat v-if="ok">
+        <h1>Заголовок</h1>
+        <p>Абзац 1</p>
+        <p>Абзац 2</p>
+    </templat>
+    <templat v-else>
+        <h1>Else Template</h1>
+    </templat>
+
+    <div v-if="Math.random()>0.5">
+        Сейчас меня видно
+    </div>
+    <div v-else>
+        А теперь - нет
+    </div>
+
+    <div v-if="type ==='A'">
+        A
+    </div>
+    <div v-else-if="type ==='B'">
+        B
+    </div>
+    <div v-else-if="type ==='C'">
+        C
+    </div>
+    <div v-else>
+        Not A,B,C
+    </div>
+
+<h1 v-show="ok">Привет!</h1>
+
+</div>
+
+<div id="toggle">
+    <div v-if="loginType==='username'">
+        <label>Имя пользователя</label>
+        <input placeholder="Введите имя пользователя" key="username-input">
+    </div>
+    <div v-else>
+        <label>Email</label>
+        <input placeholder="Введите адрес email" key="email-input">
+    </div>
+    <button v-on:click="toggleLoginType">Переключить тип логина</button>
+</div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+<script src="conditional.js"></script>
+
+</body>
+</html>
