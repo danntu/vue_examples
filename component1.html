@@ -2,9 +2,42 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<div id="example">
+    <my-component></my-component>
+    <my-component1></my-component1>
+
+</div>
+
+<div id="example1">
+    <my-component1></my-component1>
+</div>
+<div id="example-2">
+    <simple-counter></simple-counter>
+    <simple-counter></simple-counter>
+    <simple-counter></simple-counter>
+</div>
+
+<div id="example-3">
+    <child message="Привет!"></child>
+</div>
+<div id="example-4">
+    <input v-model="parentMsg">
+    <pre>
+        {{$data | json }}
+    </pre>
+    <br>
+    <!--<child2 v-bind:my-message="parentMsg"></child2>-->
+    <child2 :my-message="parentMsg"></child2>
+</div>
+
+<div id="example-5">
+    <!--<todo-item v-bind="todo"></todo-item>-->
+    <todo-item v-bind:text="todo.text" v-bind:is-complete="todo.isComplete"></todo-item>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+<script src="component1.js"></script>
 </body>
 </html>
