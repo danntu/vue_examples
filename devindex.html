@@ -6,21 +6,21 @@
 </head>
 <body>
 
-  <div id="app1">
-    <h1>{{message1}}</h1>
-    <input type="text" v-model="message1">
-    <pre> {{$data | json}}</pre>
+  <div id="app">
+    <h1>{{message}}</h1>
+    <input type="text" v-model="message">
+    <pre> {{ $data | json}}</pre>
   </div>
-
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
   <script>
    new Vue({
-     el:'#app1',
-     data:{
-       message1:'Hello world'
+     el: "#app",
+     data: {
+       message:"Hello world"
      }
    })
   </script>
 
-<script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+
 </body>
 </html>
