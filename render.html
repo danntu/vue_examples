@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="example-1">
+    <ul>
+        <li v-for="item in items">
+            {{item.message}}
+        </li>
+        <br>
+        <li v-for="item of items">
+            {{item.message}}
+        </li>
+    </ul>
+
+</div>
+
+<div id="push">
+    <input v-model="newText" placeholder="Добавить элемент">
+    <button v-on:click="pushing">Pushing</button>
+    <button v-on:click="poping">Poping</button>
+    <button v-on:click="reversing">Reversing</button>
+    <button v-on:click="sorting">Sorting does not work</button>
+
+</div>
+<div id="example-2">
+    <ul>
+        <li v-for="(item,index) in items">
+            {{parentMessage}} - {{index}} - {{item.message}}
+        </li>
+    </ul>
+    <br>
+<div v-for="item in items" :key="item.id">
+    Text {{item.id}} {{item.message}}
+</div>
+<br>
+</div>
+
+<div id="v-for-object" class="demo">
+    <li v-for="value in object">
+        {{value}}
+    </li>
+    <br>
+    <li v-for="(value,key) in object">
+        {{key}} : {{value}}
+    </li>
+    <br>
+    <li v-for="(value,key,index) in object">
+        {{index}}.{{key}} : {{value}}
+    </li>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+<script src="renderlist.js"></script>
+</body>
+</html>
