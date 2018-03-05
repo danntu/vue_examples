@@ -20,6 +20,11 @@ new Vue({
         },
         reversing:function () {
             example1.items.reverse()
+        },
+        filtering:function () {
+            example1.items = example1.items.filter(function (item) {
+                return item.message.match(/Dan1/)
+            })
         }
 
     },
