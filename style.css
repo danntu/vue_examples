@@ -5,6 +5,13 @@ body {
     color: #272727;
 }
 
+#app {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
 ul {
     list-style: none;
     width: 240px;
