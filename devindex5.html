@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="style5.css">
+</head>
+<body>
+<div id="app1">
+
+  <textarea v-model="input1"></textarea>
+  <div id="result">{{{input1|emotion}}}</div>
+</div>
+
+<script src="http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.26/vue.min.js"></script>
+<script>
+  Vue.filter('emotion', function(value){
+    return value.replace('единорог','&#129412;')
+    .replace('щенок', '&#128054;')
+.replace('огне', '&#128293;')
+.replace('грустно', '&#128546;')
+
+  })
+
+  new Vue({
+    el:'#app1',
+    data:{
+      input1: '',
+      array: [
+                  {
+                       name: 'Иван',
+                       age: 45
+                   },
+                   {
+                       name: 'Вика',
+                       age: 19
+                   },
+                   {
+                       name: 'Иван',
+                       age: 29
+                   },
+                   {
+                       name: 'Максим',
+                       age: 20
+                   }
+      ]
+    }
+  })
+  </script>
+
+  <!-- <br>
+  <br><br>
+  <! lowercase  {{ input | lowercase}}<br>
+  uppercase {{ input | uppercase}}<br>
+  capitalize {{ input | capitalize}}<br>
+  currency {{ input | currency '₸' 0 }} -->
+  <!-- <ul>
+    <! <li v-for="item in array | orderBy 'name' 'age' -1 ">{{item.name}}, {{item.age}} -->
+    <!-- <li v-for="item in array | filterBy input in 'name' ">{{item.name}}, {{item.age}}
+
+  </ul> -->
+</body>
+</html>
