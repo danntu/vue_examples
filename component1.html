@@ -34,8 +34,8 @@
 </div>
 
 <div id="example-5">
-    <!--<todo-item v-bind="todo"></todo-item>-->
-    <todo-item v-bind:text="todo.text" v-bind:is-complete="todo.isComplete"></todo-item>
+    v-bind="todo" <todo-item v-bind="todo"></todo-item><br>
+    v-bind:text="todo.text" v-bind:is-complete="todo.isComplete" <todo-item v-bind:text="todo.text" v-bind:is-complete="todo.isComplete"></todo-item>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
 <script src="component1.js"></script>
